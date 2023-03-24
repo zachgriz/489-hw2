@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar{
+  background-color: #2d5528;
+  color: white;
+}
+.nav_text{
+  margin-left: 25px;
+}
+.nav_text h1{
+  font-size: 60px;
+}
+.pet_desc{
+  margin: 20px;
+  width: 90%;
+  font-size: 22px;
+}
+.schoolimg{
+  margin: 20px;
+  width: 80%;
+  border: #2d5528 15px solid;
+  border-radius: 5%;
+}
+.petition_form{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.formgroup{
+  padding: 10px;
+}
+.item_name{
+  font-weight: 600;  
+  color: #2d5528;
+}
+.item_city{
+  font-weight: 400;
+}
+.signlist{
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+.item_time{
+  font-weight: 300;
+}

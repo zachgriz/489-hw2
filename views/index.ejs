@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Petition Page</title>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row navbar">
+          <div class="col nav_text text-center">
+            <h1>Save our School!</h1>
+            <h3><%= signatures.length %>/300,000 signatures</h3>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <p class="pet_desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium varius lacus, sed auctor quam vehicula eget. Mauris id elementum arcu. Vivamus placerat eleifend elit,
+            vitae rhoncus enim feugiat ac. Ut in condimentum elit. Donec gravida sed elit at pellentesque. Duis ac est eget odio interdum tincidunt. Ut maximus magna sit amet aliquet laoreet.
+            Nam mi dui, aliquet nec odio quis, suscipit sodales velit. Nunc commodo lorem ut odio aliquet, sit amet euismod risus malesuada. Fusce eleifend eget erat a sollicitudin.
+            Vestibulum luctus erat eu quam pretium tincidunt. Duis eu velit tincidunt, vestibulum ipsum a, rhoncus ligula. <br><br> Duis mattis nisi eget massa eleifend dapibus. Integer venenatis
+            ultricies est. Phasellus eget lacus aliquam, posuere mi vel, aliquam erat. Donec sed finibus quam. Duis posuere nunc eros, sit amet tincidunt urna commodo non. Donec porttitor
+            ligula in lorem ornare, et feugiat nisl pellentesque. In in rutrum metus. Proin placerat ut quam et rutrum. Maecenas congue ultrices nisl, sed dictum mauris. Interdum et malesuada
+            fames ac ante ipsum primis in faucibus. Phasellus consequat orci neque, id tristique odio lobortis non.
+          </p>
+        </div>
+        <div class="col">
+          <img src="images/school.jpg" alt="SCHOOL" class="schoolimg">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <h2>Sign now!</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <form action="/sign" method="post" class="petition_form">
+            <div class="formgroup">
+              <label for="fullname">Full Name</label>
+              <input required type="text" name="fullname" id="fullname" class="form-control">
+            </div>
+            <div class="formgroup">
+              <label for="city">City</label>
+              <input required type="text" name="city" id="city" class="form-control">
+            </div>
+            <div class="formgroup">
+              <input required class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault"> I agree to sign this petition </label>
+            </div>
+            <div class="formgroup">
+              <input type="submit" class="btn btn-primary" value="Sign Petition"></input>
+            </div>       
+          </form>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="signlist">
+            <ul class="list-group">
+              <% for (signature of signatures) { %>
+                <li class="list-group-item"><span class="item_name"><%= signature.fullname %></span> - <span class="item_city"><%= signature.city %></span> <span class="item_time"> signed <%=new Date(signature.createdAt).toLocaleDateString('en-US', {timeZone: 'PST'}) %></span></li>
+                <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    </body>
+    
+</html>
